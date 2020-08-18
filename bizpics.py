@@ -44,6 +44,11 @@ def convertToRGB(hexArray):
         rgbArray.append(rgb)
     return rgbArray
 
+def processRGBList(rgbList):
+    ##todo calculations
+    return rgbList
+
+
 count = 0
 chrome_options = Options()
 chrome_options.add_argument("--headless")
