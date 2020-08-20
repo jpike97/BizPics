@@ -42,9 +42,6 @@ def convertToRGB(hexColor):
         rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
         return(rgb)
 
-def processRGBList(rgbList):
-    ##todo calculations
-    return rgbList
 
 
 count = 0
@@ -67,6 +64,21 @@ for image in images:
 driver.close()
 
 print(colorlist)
-newColorList = processRBGList(colorlist)
 
+redTotal = 0
+greenTotal = 0
+imageTotal = 0
+
+for rgbValue in colorlist:
+	green = rgbValue[0]
+	red = rgbValue[1]
+	greenTotal += green
+	redTotal += red
+	imageTotal += 1
+	
+greenAvg = greenTotal / imageTotal
+redAvg = redTotal / imageTotal
+
+print(greenAvg)
+print(redAvg)
 
