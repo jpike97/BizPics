@@ -34,15 +34,13 @@ def imagecalc():
 	index_max = scipy.argmax(counts)  # find most frequent
 	peak = codes[index_max]
 	colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
-	colorlist.append(colour)
+	colourRGB = convertToRGB(colour)
+	colorlist.append(colourRGB)
 
-def convertToRGB(hexArray):
-    rgbArray = []
-    for hex in hexArray:
-        h = hex
+def convertToRGB(hexColor):
+        h = hexColor
         rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
-        rgbArray.append(rgb)
-    return rgbArray
+        return(rgb)
 
 def processRGBList(rgbList):
     ##todo calculations
@@ -69,5 +67,6 @@ for image in images:
 driver.close()
 
 print(colorlist)
-rbgColorList = convertToRGB(colorlist)
-print(rbgColorList)
+newColorList = processRBGList(colorlist)
+
+
