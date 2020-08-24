@@ -78,7 +78,8 @@ for rgbValue in colorlist:
 	
 greenAvg = greenTotal / imageTotal
 redAvg = redTotal / imageTotal
+##TODO check for what makes an image green lol 
 
 print(greenAvg)
 print(redAvg)
-
+print(imageTotal)
