@@ -35,8 +35,6 @@ def imagecalc():
 	peak = codes[index_max]
 	colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
 	colourHSV = convertToHSV(colour)
-	print("color HSV is ")
-	print(colourHSV)
 	colorlist.append(colourHSV)
 
 def convertToHSV(rgbColor):
